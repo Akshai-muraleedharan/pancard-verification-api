@@ -30,7 +30,7 @@ const getpancardData = (req, res) => __awaiter(void 0, void 0, void 0, function*
         const config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'https://api.invincibleocean.com/invincible/panPlus',
+            url: process.env.INVINCIBLE_OCEAN_BASE_URL,
             headers: {
                 'clientId': `${process.env.INVINCIBLE_CLIENT_ID}`,
                 'secretKey': `${process.env.INVINCIBLE_SECRET_ID}`,

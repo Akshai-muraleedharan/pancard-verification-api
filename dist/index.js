@@ -18,6 +18,8 @@ const express_rate_limit_1 = require("express-rate-limit");
 const helpers_1 = require("./utils/helpers");
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const Routes_1 = require("./Routes");
+const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
+const swagger_1 = __importDefault(require("./swagger"));
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
 // Connect Database
@@ -49,6 +51,7 @@ app.use((0, cookie_parser_1.default)());
 app.get("/", (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.send("Hai there, API is running...");
 }));
+app.use("/api-docs", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swagger_1.default));
 app.use("/api/v1", Routes_1.router);
 // Start server
 app.listen(PORT, () => {
