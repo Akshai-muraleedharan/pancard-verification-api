@@ -31,10 +31,3 @@ exports.router = express_1.default.Router();
  *
  */
 exports.router.post("/pancard", pancardController_1.getpancardData);
-/**
- * @openapi
- * /api/hello:
- *   get:
- *     summary: Hello test
- */
-exports.router.get("/hello", (req, res) => res.send("Hello"));
