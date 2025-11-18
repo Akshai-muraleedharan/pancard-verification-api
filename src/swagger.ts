@@ -1,7 +1,7 @@
 import path from "path"
 import swaggerJSDoc from "swagger-jsdoc";
 
-const apiPaths = process.env.NODE_ENV === "production" ? [path.join(__dirname, "./routes/**/*.js")] : ["./src/routes/**/*.ts"]
+const apiPaths = process.env.NODE_ENV === "production" ? [path.join(__dirname, "./Routes/**/*.js")] : ["./src/Routes/**/*.ts"]
 
 
 const options = {
