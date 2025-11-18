@@ -31,3 +31,12 @@ export const router: Router = express.Router();
  *        
  */
 router.post("/pancard", getpancardData)
+
+
+/**
+ * @openapi
+ * /api/hello:
+ *   get:
+ *     summary: Hello test
+ */
+router.get("/hello", (req, res): any => res.send("Hello"));
