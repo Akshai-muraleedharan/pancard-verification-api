@@ -7,7 +7,7 @@ import cookieParser from "cookie-parser";
 import { router } from "./Routes";
 import swaggerUi from "swagger-ui-express"
 import swaggerSpec from "./swagger"
-
+import type { Express, Request, Response } from "express"
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -48,7 +48,7 @@ app.get("/", async (_req, res) => {
 });
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
-
+app.get("/api-docs.json", (_req: Request, res: Response): any => res.json(swaggerSpec))
 
 app.use("/api/v1", router)
 
